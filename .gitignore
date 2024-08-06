@@ -1,0 +1,56 @@
+# Ignore Neovim swap files
+*.swp
+*.swo
+
+# Ignore Neovim backup files
+*.bak
+*.tmp
+
+# Ignore session files
+Session.vim
+
+# Ignore undo files
+*.un~
+
+# Ignore directories created by plugin managers
+# Adjust these as necessary depending on the plugin manager you use
+
+# For lazy.nvim
+lazy-lock.json
+lazy-lock.json.backup
+lazy
+
+# For packer.nvim
+plugin/packer_compiled.lua
+
+# For vim-plug
+plugged
+
+# For dein.vim
+cache_nvim
+cache_vim
+dein
+
+# Ignore log files
+*.log
+
+# macOS specific files
+.DS_Store
+._*
+
+# Linux specific files
+*~
+
+# Node.js dependencies (if any)
+node_modules/
+
+# Lock files
+*.lock
+
+# Ignore other temporary files
+*.DS_Store
+
+# Specific to certain IDEs and editors
+.vscode/
+.idea/
+
