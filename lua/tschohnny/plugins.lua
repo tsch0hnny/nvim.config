@@ -4,7 +4,11 @@ return {
   { 'folke/lazy.nvim', lazy = false },
 
   { 'catppuccin/nvim', name = 'catppuccin' },
-
+  {
+      "vhyrro/luarocks.nvim",
+      priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+      config = true,
+  },
 
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   { 'nvim-treesitter/playground' },
@@ -12,6 +16,13 @@ return {
   { 'mbbill/undotree' },
   { 'tpope/vim-fugitive' },
   { 'eandrju/cellular-automaton.nvim' },
+
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require("mason").setup() -- This calls Mason's own setup function
+    end,
+  },
 
   -- install without yarn or npm
   -- {
@@ -55,7 +66,7 @@ return {
 
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    branch = 'v3.x',
     dependencies = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -74,5 +85,13 @@ return {
       { 'L3MON4D3/LuaSnip' },
       { 'rafamadriz/friendly-snippets' }
     }
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require('mason-lspconfig').setup({
+        -- automatic_installation = true, -- Optional
+      })
+    end,
   }
 }
